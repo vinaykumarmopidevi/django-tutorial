@@ -62,4 +62,55 @@ In this example:
 - **View:** The `product_list` view fetches all products from the database using `Product.objects.all()` and passes them to the template for rendering.
 - **Template:** The `product_list.html` template displays a list of products using a for loop to iterate over the products passed from the view.
 
-This structure adheres to the MVT pattern in Django, where models define data, views handle logic and data processing, and templates handle presentation and rendering.
+This structure adheres to the MVT pattern in Django, where models define data, views handle logic and data processing, and templates handle presentation and rendering
+
+**admin (admin.py):**
+
+ ```python
+from django.contrib import admin
+from .models import Product
+
+# Register your models here.
+admin.site.register(Product)
+```
+
+**app url (url.py):**
+
+```python
+from django.urls import path
+from . import views
+
+urlpatterns = [
+   path('products/', views.product_list, name="products"),
+]
+
+```
+
+**Project url (url.py):**
+
+```python
+from django.contrib import admin
+from django.urls import path,include
+from first_app import views
+
+urlpatterns = [
+    path('',include('first_app.urls')),
+    path("admin/", admin.site.urls),
+]
+
+```
+
+**Database migration:**
+
+```sh
+python manage.py migrate
+python manage.py makemigrations first_app
+python manage.py migrate
+python manage.py createsuperuser
+```
+
+**Create Superuser:**
+
+```sh
+python manage.py createsuperuser
+```
