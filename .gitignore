@@ -1,3 +1,2 @@
 .idea/
-first_project/first_app/__pycache__/
-first_project/first_project/__pycache__/
+*/__pycache__/
