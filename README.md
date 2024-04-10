@@ -1,7 +1,8 @@
-"# django-tutorial" 
+# Django-tutorial
 
-***clone and pull project***
-```bash
+***Clone and pull project***
+
+```sh
 git clone https://github.com/vinaykumarmopidevi/django-tutorial.git
 git pull
 ```
