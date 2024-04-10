@@ -114,3 +114,45 @@ python manage.py createsuperuser
 ```sh
 python manage.py createsuperuser
 ```
+
+**Fake data generate:**
+
+```python
+import os
+# Configure settings for project
+# Need to run this before calling models from application!
+os.environ.setdefault('DJANGO_SETTINGS_MODULE','first_project.settings')
+
+import django
+# Import settings
+django.setup()
+
+import random
+from first_app.models import Product
+from faker import Faker
+
+fakegen = Faker()
+
+def populate(N=5):
+    '''
+    Create N Entries of Dates Accessed
+    '''
+
+    for entry in range(N):
+
+        # Create Fake Data for entry
+        fake_name = fakegen.name()
+        fake_price = fakegen.pyint()
+        fake_description = fakegen.name()
+
+        # Create new User Entry
+        user = Product.objects.get_or_create(name=fake_name,
+                                          price=fake_price,
+                                          description=fake_description)[0]
+
+
+if __name__ == '__main__':
+    print("Populating the databases...Please Wait")
+    populate(20)
+    print('Populating Complete')
+```
