@@ -106,13 +106,16 @@ urlpatterns = [
 python manage.py migrate
 python manage.py makemigrations first_app
 python manage.py migrate
-python manage.py createsuperuser
 ```
 
 **Create Superuser:**
 
 ```sh
 python manage.py createsuperuser
+```
+
+```sh
+pip install Faker
 ```
 
 **Fake data generate:**
