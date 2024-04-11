@@ -97,3 +97,9 @@ Step 6: migrate
 python manage.py migrate
 ```
 
+***Get venv list***
+
+```sh
+conda info --envs
+conda env list
+```
