@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/demo.js' %}"></script>
+  </head>
+  <body>
+    <h1> Welcome!</h1><br>
+    <img src="{% static 'images/download.jpeg' %}" alt="sample"><br>
+    {{ data }}<br>
+    {% if data == 'django_app_development' %}
+      <h1>Welcome! django {{data}}</h1>
+    {% else %}
+      <h2>Try again!  {{data}}</h2>
+    {% endif %}
+
+    <h1 id="demo">It will change</h1><br>
+    <input id='txt' type="text"><br>
+    <button id="btn" onclick="display()">Click Me</button>
+
+  </body>
+</html>
