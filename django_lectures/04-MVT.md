@@ -122,9 +122,9 @@ Running `python manage.py migrate` in a Django project applies any pending datab
 
 5. **No Action if No Migrations Pending**: If there are no pending migrations, running `migrate` will simply output "No migrations to apply" and won't make any changes to the database.
 
-## python manage.py migrate
-
 Overall, `python manage.py migrate` is a crucial command for keeping your database schema in sync with your Django project's models. It's typically run after making changes to your models or after pulling changes from collaborators that include new migrations.
+
+## `python manage.py makemigrations`
 
 Running `python manage.py makemigrations` in a Django project analyzes the current state of your models and creates migration files that represent the changes you've made to your models since the last migration. Here's what happens when you run this command:
 
