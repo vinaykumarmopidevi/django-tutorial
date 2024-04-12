@@ -5,7 +5,7 @@ from .models import Product
 # Create your views here.
 def index(request):
     #return HttpResponse("Hello world")
-    my_dict={'data':'Flask_app_development'}
+    my_dict={'data':'python_app_development'}
     return render(request,'sample/index.html',my_dict)
 
 def product_list(request):
