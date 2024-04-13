@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Page</title>
+</head>
+<body>
+    <h1>Employees</h1>
+   
+    {% if emp_data %}
+    <ol>
+        {% for emp in emp_data %}
+        <li>Employee Info</li>
+        <ul>
+            <li>Emp Id: {{ emp.id }}</li>
+            <li>Name: {{ emp.name }}</li>
+            <li>Address: {{ emp.address }}</li>
+            <li>department id: {{ emp.department__id }}</li>
+            <li>Department Name: {{ emp.department__name }}</li>
+        </ul>
+        {% endfor %}
+    </ol>
+    {% endif %}
+</body>
+</html>

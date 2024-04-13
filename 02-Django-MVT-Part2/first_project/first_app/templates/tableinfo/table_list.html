@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Table Page</title>
+</head>
+<body>
+    <h1>Table</h1>
+   
+  
+   {% for emp in table_data %}
+   <li>Employee Info</li>
+   <ul> 
+       
+       <li>locker_id: {{ emp.locker__locker_id  }}</li>
+       <li>locker_name: {{ emp.locker__locker_name  }}</li>
+       <li>city: {{ emp.locker__city  }}</li>
+       <li>state: {{ emp.locker__state  }}</li>
+       <li>pincode: {{ emp.locker__pincode  }}</li>
+       <li>locker_capacity: {{ emp.locker__locker_capacity  }}</li>
+       <li>key: {{ emp.key  }}</li>
+       <li>empty_slots : {{ emp.empty_slots  }}</li>
+   </ul>
+   {% endfor %}
+    
+ 
+</body>
+</html>
