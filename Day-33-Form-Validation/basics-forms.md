@@ -128,6 +128,14 @@ In Django, a ModelForm is a powerful tool for creating forms based on Django mod
 
 This way, you can quickly create forms in Django that are tightly coupled with your database models, saving you time and effort in form creation, validation, and processing. ModelForms also handle form population and validation automatically based on the model field definitions.
 
+## `csrf_token`
+
+Yes, `csrf_token` is indeed used in Django forms for preventing Cross-Site Request Forgery (CSRF) attacks. CSRF tokens are a security measure used to protect against unauthorized actions performed by attackers on behalf of authenticated users.
+
+In Django, when you render a form using the `{% csrf_token %}` template tag, it inserts a hidden input field with a CSRF token. This token is unique per session and is required for any POST requests made to the server. When the form is submitted, Django validates this token to ensure that the request originated from the same site and wasn't forged by a malicious third-party.
+
+Including `{% csrf_token %}` in your form templates is considered a best practice for ensuring the security of your Django application.
+
 ## `clean()`
 
 The `clean()` method in Django is used to clean and validate data entered by users in forms. It is called automatically when a form is submitted, and it can be used to perform both basic and complex validation checks.
