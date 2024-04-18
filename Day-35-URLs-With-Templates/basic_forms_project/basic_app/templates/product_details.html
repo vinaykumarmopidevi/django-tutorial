@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block body_block %}
+<h3> Product  </h3>
+<ul>
+
+  <li> {{ product.pk}} - {{ product.name}}- ${{ product.price}}</li>
+
+</ul>
+{% endblock %}
