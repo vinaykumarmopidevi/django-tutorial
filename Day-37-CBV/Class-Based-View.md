@@ -493,3 +493,65 @@ Here's how you might use `your_model_form.html`:
 ```
 
 In this template, `{{ form.as_p }}` is a Django template tag that renders the form fields as paragraphs. You can use other `as_*` methods provided by Django forms to render the form in different formats.
+
+## `DeleteView`
+
+In Django, `DeleteView` is a class-based view used for displaying a confirmation page for deleting an object and handling the deletion process. It's particularly useful when you want to provide users with a way to delete instances of a model.
+
+Here's a basic example of how to use `DeleteView`:
+
+```python
+from django.views.generic import DeleteView
+from .models import YourModel
+from django.urls import reverse_lazy
+
+class YourModelDeleteView(DeleteView):
+    model = YourModel
+    template_name = 'your_app/your_model_confirm_delete.html'
+    success_url = reverse_lazy('success')
+```
+
+In this example:
+
+- We define a class `YourModelDeleteView` that inherits from `DeleteView`.
+- We specify the `model` attribute to indicate which model the view should delete instances of (`YourModel` in this case).
+- We specify the `template_name` attribute to indicate which template should be used to render the confirmation page for deletion.
+- We specify the `success_url` attribute to indicate where the user should be redirected after the object is successfully deleted. We use `reverse_lazy()` to specify the URL name ('success') instead of a hardcoded URL. You can replace `'success'` with the name of the URL you want to redirect to.
+
+You can then map this view to a URL in your `urls.py`:
+
+```python
+from django.urls import path
+from .views import YourModelDeleteView
+
+urlpatterns = [
+    path('delete/<int:pk>/', YourModelDeleteView.as_view(), name='delete'),
+    path('success/', SuccessView.as_view(), name='success'),  # Define a success view to redirect to
+]
+```
+
+Now, when a user accesses `/delete/<pk>/`, where `<pk>` is the primary key of the object to be deleted, Django will render the `your_model_confirm_delete.html` template containing the confirmation page for deleting the object. After the user confirms the deletion, the object will be deleted from the database, and the user will be redirected to the `'success'` URL.
+
+Here's how you might use `your_model_confirm_delete.html`:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Deletion</title>
+</head>
+<body>
+    <h1>Confirm Deletion</h1>
+    <p>Are you sure you want to delete this object?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Yes, delete</button>
+        <a href="{% url 'cancel' %}">Cancel</a>
+    </form>
+</body>
+</html>
+```
+
+In this template, `{% url 'cancel' %}` generates a URL using the name 'cancel', which can be another view for canceling the deletion process. You need to define this URL in your `urls.py`.
