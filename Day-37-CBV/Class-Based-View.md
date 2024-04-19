@@ -40,6 +40,8 @@ In this example, any GET request to `/my-view/` will be handled by the `get()` m
 
 Class-Based Views offer a lot of flexibility and allow you to reuse common patterns by subclassing built-in generic views provided by Django, such as `DetailView`, `ListView`, `CreateView`, `UpdateView`, and `DeleteView`. This can greatly reduce code duplication in your application.
 
+![alt text](cbv.png "Class-Based View")
+
 ## `TemplateView`
 
 In Django, `TemplateView` is a class-based view that renders a template. It's particularly useful when you want to display a static HTML template or when you need to pass some additional context to the template. 
