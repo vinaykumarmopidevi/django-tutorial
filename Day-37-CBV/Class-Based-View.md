@@ -40,7 +40,7 @@ In this example, any GET request to `/my-view/` will be handled by the `get()` m
 
 Class-Based Views offer a lot of flexibility and allow you to reuse common patterns by subclassing built-in generic views provided by Django, such as `DetailView`, `ListView`, `CreateView`, `UpdateView`, and `DeleteView`. This can greatly reduce code duplication in your application.
 
-![alt text](cbv.png "Class-Based View")
+![alt text](cbv.png "TemplateView")
 
 ## `TemplateView`
 
@@ -148,6 +148,7 @@ In this example, you can implement any custom logic within `get_redirect_url()` 
 
 ## `DetailView`
 
+![alt text](DetailView.png "DetailView")
 In Django, `DetailView` is a class-based view that displays details for a single model instance. It's commonly used when you want to display information about a specific object retrieved from the database.
 
 Here's a basic example of how to use `DetailView`:
@@ -210,7 +211,6 @@ Here's how you might use `your_model_detail.html`:
 ```
 
 In this template, `{{ object.title }}` and `{{ object.description }}` will be replaced with the corresponding attributes of the `YourModel` instance.
-![alt text](DetailView.png "DetailView")
 
 ## `ListView`
 
