@@ -1,22 +1,22 @@
 from django.shortcuts import render
 from .models import Book
 from .filters import BookFilter
+#from .forms import BookNameFilterForm
 
 # Create your views here.
 def index(request):
     """
-    name=request.GET.get("name")
+    name=request.GET.get('name')
     books=Book.objects.all()
+    
     if name:
         books=books.filter(name__icontains=name)
-    
     context={
-        "form":BookNameFilterForm,
+        'form': BookNameFilterForm(),
         "books":books
-        
-        
-    }
+        }
     """
+
     book_filter=BookFilter(request.GET,queryset=Book.objects.all())
     context={
         'form':book_filter.form,
