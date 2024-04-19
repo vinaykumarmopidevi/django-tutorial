@@ -100,7 +100,7 @@ In this template, `{{ welcome_message }}` will be replaced with the value passed
 
 `TemplateView` simplifies the process of rendering templates in Django and is a good choice for views that only involve rendering static content or don't require complex logic.
 
-##  `RedirectView`
+## `RedirectView`
 
 In Django, `RedirectView` is a class-based view that redirects to a specific URL. It's useful when you need to redirect users from one URL to another, either within your application or to an external URL.
 
@@ -210,6 +210,7 @@ Here's how you might use `your_model_detail.html`:
 ```
 
 In this template, `{{ object.title }}` and `{{ object.description }}` will be replaced with the corresponding attributes of the `YourModel` instance.
+![alt text](DetailView.png "DetailView")
 
 ## `ListView`
 
