@@ -1,3 +1,4 @@
+# Django, Class-Based Views (CBVs)
 In Django, Class-Based Views (CBVs) are a powerful way to organize the logic of your application. They provide a more object-oriented approach compared to function-based views. CBVs encapsulate the different HTTP methods (GET, POST, etc.) into methods of a class, making it easier to manage and extend your views.
 
 Here's a basic example of a Class-Based View in Django:
