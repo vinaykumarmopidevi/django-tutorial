@@ -214,6 +214,7 @@ In this template, `{{ object.title }}` and `{{ object.description }}` will be re
 
 ## `ListView`
 
+![alt text](ListView.png "ListView")
 In Django, `ListView` is a class-based view that displays a list of objects retrieved from the database. It's commonly used when you want to display multiple instances of a model in a paginated list format.
 
 Here's a basic example of how to use `ListView`:
