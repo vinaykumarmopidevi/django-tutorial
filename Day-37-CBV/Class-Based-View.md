@@ -283,6 +283,7 @@ In this template, `{% for object in object_list %}` iterates over the list of ob
 
 ## `FormView`
 
+![alt text](FormView.png "FormView")
 In Django, `FormView` is a class-based view that displays a form, processes submitted data, and renders the appropriate response. It's commonly used when you need to display a form to the user, handle form validation, and process form submission.
 
 Here's a basic example of how to use `FormView`:
