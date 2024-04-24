@@ -1,6 +1,6 @@
 # Django RestAPI Example
 
-Sure, here's a simple example of how you can create a Django REST API using Django REST Framework (DRF):
+create a Django REST API using Django REST Framework (DRF):
 
 1. **Setup Django Project**:
    First, make sure you have Django and Django REST Framework installed. You can install them using pip:
