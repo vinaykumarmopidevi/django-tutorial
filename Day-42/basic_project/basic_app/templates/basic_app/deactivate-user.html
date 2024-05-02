@@ -1,0 +1,19 @@
+{% extends 'basic_app/base.html' %}
+{% block body_block %}
+    <div class="container">
+        <div class="jumbotron">
+            <h1>deactivate user</h1>
+
+            <form action="{% url 'basic_app:deactivateUser' username=username.slug %}" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="usr">UserName:</label>
+                    <input type="text" class="form-control" id="username">
+                </div>
+                <button type="submit" class="active">Yes, Deactivate</button>
+                <button type="button" data-dismiss="modal">Cancel</button>
+            </form>
+
+        </div>
+    </div>
+{% endblock %}
