@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Topic</title>
+    </head>
+    <body>
+        {{ object.title }}
+        {{ object.description }}
+        <br>
+        <a href="{% url 'list_view' %}">Return</a>
+        <a href="{% url 'update_view' object.pk %}">Update</a>
+        <a href="{% url 'delete_topic' object.pk %}">Delete</a>
+    </body>
+</html>
